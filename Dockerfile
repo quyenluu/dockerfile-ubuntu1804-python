@@ -12,15 +12,11 @@ RUN apt-get update && \
             curl \
             wget \
             unzip \
+			git \
             zip \
             nginx \
             cron && \
     touch /var/log/cron.log
-
-#install git
-RUN add-apt-repository ppa:git-core/ppa && \
-    apt-get update && \
-    apt install git -y
 
 #install node npm
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
