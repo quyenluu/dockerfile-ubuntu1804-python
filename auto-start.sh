@@ -15,5 +15,9 @@ echo "=> mySQL service started"
 #start cron
 service cron start
 
+#start redis-server
+/usr/local/bin/redis-server --daemonize yes
+#systemctl restart redis.service
+
 #Start Apache2 in foreground mode
 #/usr/local/bin/apache2-foreground
