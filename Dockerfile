@@ -20,8 +20,8 @@ RUN apt-get update && \
     touch /var/log/cron.log
 
 #install node npm
-RUN curl -sL https://deb.nodesource.com/setup_12.x  | bash -
-RUN apt-get -y install nodejs
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt-get install -y nodejs
 
 #install python-pip
 RUN apt-get install -y python3-pip python3-dev python3-venv && \
