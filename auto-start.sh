@@ -15,7 +15,7 @@
 #start cron
 service cron start
 
-redis-server --daemonize yes
+
 
 #start redis-server
 # /usr/local/bin/redis-server --daemonize yes
