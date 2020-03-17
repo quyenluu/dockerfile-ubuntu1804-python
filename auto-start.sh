@@ -15,7 +15,9 @@
 #start cron
 service cron start
 
+/usr/bin/redis-server --daemonize yes
 
+/usr/bin/mysqld_safe >/dev/null 2>&1 &
 
 #start redis-server
 # /usr/local/bin/redis-server --daemonize yes
