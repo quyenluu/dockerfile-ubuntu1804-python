@@ -1,1 +1,1 @@
-docker run -it -d --restart=always --name=myapp -e DB_REMOTE_ROOT_PASS=12345678 -p 18080:80 -p 13306:3306 -p 16379:6379 -v D:/workspace/docker-workspace/test-app:/var/data/myapp quyenluu/ubuntu-1804-python36
+docker run -it -d --restart=always --name=myapp -e 'DB_REMOTE_ROOT_PASS=12345678' -p 18080:80 -p 13306:3306 -p 16379:6379 -v D:/workspace/docker-workspace/test-app:/var/data/myapp quyenluu/ubuntu-1804-python36

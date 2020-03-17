@@ -51,4 +51,4 @@ RUN chmod a+x /auto-start.sh
 
 EXPOSE 80 3306 6379
 
-CMD ["service cron start", "redis-server --daemonize yes", "/usr/bin/mysqld_safe"]
+CMD ["/usr/bin/mysqld_safe", "auto-start.sh"]
