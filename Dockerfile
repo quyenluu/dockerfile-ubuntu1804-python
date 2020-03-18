@@ -15,13 +15,18 @@ RUN apt-get update && \
 			git \
             zip \
             nginx \
+            dirmngr \
+            apt-transport-https \
+            lsb-release \
+            ca-certificates \
+            build-essential \
 			redis-server \
             cron && \
     touch /var/log/cron.log
 
 #install node npm
 RUN apt-get update && \
-    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \    
     apt-get install -y nodejs
 
 #install python-pip
@@ -47,10 +52,10 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 RUN chmod 755 /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
-COPy cron-foreground /usr/local/bin/cron-foreground
+COPY cron-foreground /usr/local/bin/cron-foreground
 RUN chmod 755 /usr/local/bin/cron-foreground
 
-COPy redis-server-foreground /usr/local/bin/redis-server-foreground
+COPY redis-server-foreground /usr/local/bin/redis-server-foreground
 RUN chmod 755 /usr/local/bin/redis-server-foreground
 
 COPY auto-start.sh /auto-start.sh
