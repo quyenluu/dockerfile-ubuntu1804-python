@@ -38,4 +38,4 @@
 
 /usr/local/bin/cron-foreground -D
 
-/usr/local/bin/redis-server-foreground -D
+/usr/local/bin/redis-server-foreground
