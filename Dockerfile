@@ -46,11 +46,11 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 RUN chmod 755 /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
-COPy cron-foregroud /usr/local/bin/cron-foregroud
-RUN chmod 755 /usr/local/bin/cron-foregroud
+COPy cron-foreground /usr/local/bin/cron-foreground
+RUN chmod 755 /usr/local/bin/cron-foreground
 
-COPy redis-server-foregroud /usr/local/bin/redis-server-foregroud
-RUN chmod 755 /usr/local/bin/redis-server-foregroud
+COPy redis-server-foreground /usr/local/bin/redis-server-foreground
+RUN chmod 755 /usr/local/bin/redis-server-foreground
 
 COPY auto-start.sh /auto-start.sh
 RUN chmod a+x /auto-start.sh

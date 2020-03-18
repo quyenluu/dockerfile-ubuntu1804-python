@@ -36,6 +36,6 @@
 
 # /etc/init.d/{service} {stop|start|restart}
 
-/usr/local/bin/cron-foregroud
+/usr/local/bin/cron-foreground
 
-/usr/local/bin/redis-server-foregroud
+/usr/local/bin/redis-server-foreground
