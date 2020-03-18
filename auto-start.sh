@@ -13,14 +13,7 @@
 # echo "=> mySQL service started"
 
 #start cron
-RET=1
-while [[ RET -ne 0 ]]; do
-    echo "=> Waiting for start cron"
-    # sleep 5
-    service cron start > /dev/null 2>&1
-    RET=$?
-done
-echo "=> cron service started"
+service cron start
 
 
 # /usr/bin/redis-server --daemonize yes
