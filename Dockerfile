@@ -46,9 +46,15 @@ RUN ln -s /usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 RUN chmod 755 /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
+COPy cron-foregroud /usr/local/bin/cron-foregroud
+RUN chmod 755 /usr/local/bin/cron-foregroud
+
+COPy redis-server-foregroud /usr/local/bin/redis-server-foregroud
+RUN chmod 755 /usr/local/bin/redis-server-foregroud
+
 COPY auto-start.sh /auto-start.sh
 RUN chmod a+x /auto-start.sh
 
 EXPOSE 80 3306 6379
 
-CMD ["/usr/bin/mysqld_safe", "/auto-start.sh"]
+CMD ["/auto-start.sh"]

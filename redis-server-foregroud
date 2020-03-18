@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+exec /usr/bin/redis-server --daemonize yes "$@"

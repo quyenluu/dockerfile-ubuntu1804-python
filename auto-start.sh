@@ -13,7 +13,7 @@
 # echo "=> mySQL service started"
 
 #start cron
-service cron start
+# service cron start
 
 
 # /usr/bin/redis-server --daemonize yes
@@ -35,3 +35,7 @@ service cron start
 #/usr/local/bin/apache2-foreground
 
 # /etc/init.d/{service} {stop|start|restart}
+
+/usr/local/bin/cron-foregroud
+
+/usr/local/bin/redis-server-foregroud
