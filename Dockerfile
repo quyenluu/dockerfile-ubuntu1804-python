@@ -20,7 +20,8 @@ RUN apt-get update && \
     touch /var/log/cron.log
 
 #install node npm
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+RUN apt-get update && \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     apt-get install -y nodejs
 
 #install python-pip
@@ -57,4 +58,4 @@ RUN chmod a+x /auto-start.sh
 
 EXPOSE 80 3306 6379
 
-CMD ["/auto-start.sh"]
+CMD ["/usr/bin/mysqld_safe"]
