@@ -51,4 +51,4 @@ RUN chmod a+x /auto-start.sh
 
 EXPOSE 80 3306 6379
 
-CMD ["/auto-start.sh"]
+CMD ["/usr/bin/mysqld_safe", "/auto-start.sh"]
