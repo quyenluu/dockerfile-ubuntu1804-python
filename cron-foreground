@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-exec service cron start "$@"
+exec service cron start
